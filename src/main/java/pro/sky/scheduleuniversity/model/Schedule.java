@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Schedule {
 
-    private int id;
+    private Long id;
     private LocalDate date;
     private Discipline discipline;
     private Group group;
@@ -14,7 +14,7 @@ public class Schedule {
     public Schedule() {
     }
 
-    public Schedule(int id, LocalDate date, Discipline discipline, Group group, Teacher teacher) {
+    public Schedule(Long id, LocalDate date, Discipline discipline, Group group, Teacher teacher) {
         this.id = id;
         this.date = date;
         this.discipline = discipline;
@@ -22,11 +22,11 @@ public class Schedule {
         this.teacher = teacher;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -71,7 +71,7 @@ public class Schedule {
             return false;
         }
         Schedule schedule = (Schedule) o;
-        return id == schedule.id && date.equals(schedule.date)
+        return id.equals(schedule.id) && date.equals(schedule.date)
                 && discipline.equals(schedule.discipline)
                 && group.equals(schedule.group)
                 && teacher.equals(schedule.teacher);

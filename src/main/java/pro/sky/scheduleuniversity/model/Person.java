@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class Person {
 
-    private int id;
+    private Long id;
     private String firstName;
     private String lastName;
     private int age;
@@ -12,18 +12,18 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String firstName, String lastName, int age) {
+    public Person(Long id, String firstName, String lastName, int age) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,8 +60,9 @@ public abstract class Person {
             return false;
         }
         Person person = (Person) o;
-        return id == person.id && age == person.age
-                && firstName.equals(person.firstName) && lastName.equals(person.lastName);
+        return age == person.age && id.equals(person.id)
+                && firstName.equals(person.firstName)
+                && lastName.equals(person.lastName);
     }
 
     @Override

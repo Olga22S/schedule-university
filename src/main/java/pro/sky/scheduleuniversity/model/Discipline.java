@@ -4,22 +4,22 @@ import java.util.Objects;
 
 public class Discipline {
 
-    private int id;
+    private Long id;
     private String name;
 
     public Discipline() {
     }
 
-    public Discipline(int id, String name) {
+    public Discipline(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -40,7 +40,7 @@ public class Discipline {
             return false;
         }
         Discipline that = (Discipline) o;
-        return id == that.id && name.equals(that.name);
+        return id.equals(that.id) && name.equals(that.name);
     }
 
     @Override

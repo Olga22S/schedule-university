@@ -4,22 +4,22 @@ import java.util.Objects;
 
 public class Group {
 
-    private int id;
+    private Long id;
     private String name;
 
     public Group() {
     }
 
-    public Group(int id, String name) {
+    public Group(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -40,7 +40,7 @@ public class Group {
             return false;
         }
         Group group = (Group) o;
-        return id == group.id && name.equals(group.name);
+        return id.equals(group.id) && name.equals(group.name);
     }
 
     @Override
